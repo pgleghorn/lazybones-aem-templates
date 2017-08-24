@@ -254,7 +254,11 @@ if (props.includeAcsAemCommons) {
         bundle = dependency("com.adobe.acs", "acs-aem-commons-bundle", ACS_AEM_COMMONS_VERSION_5)
     } else if (props.aemVersion == VERSION_62 || props.aemVersion == VERSION_63) {
         bundle = dependency("com.adobe.acs", "acs-aem-commons-bundle", ACS_AEM_COMMONS_VERSION_62)
-        bundle = dependency("org.twitter4j", "twitter4j-core", TWITTER4J_VERSION_4)
+        def twitterBundle;
+        twitterBundle = dependency("org.twitter4j", "twitter4j-core", TWITTER4J_VERSION_4)
+        props.rootDependencies.add(twitterBundle)
+        props.bundleDependencies.add(twitterBundle)
+        props.contentDependencies.add(twitterBundle)
     } else {
         bundle = dependency("com.adobe.acs", "acs-aem-commons-bundle", ACS_AEM_COMMONS_VERSION_6)
     }
