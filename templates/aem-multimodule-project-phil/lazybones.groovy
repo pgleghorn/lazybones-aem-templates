@@ -120,6 +120,8 @@ def VERSION_61 = "6.1"
 def VERSION_62 = "6.2"
 def VERSION_63 = "6.3"
 
+def TWITTER4J_VERSION_4 = "4.0.0"
+
 // Core Maven Information
 props.groupId = ask("Maven group ID for the generated project [com.myco]: ", "com.myco", "groupId")
 props.artifactId = ask("Maven artifact ID for the generated reactor project [example-project]: ", "example-project", "artifactId")
@@ -252,7 +254,7 @@ if (props.includeAcsAemCommons) {
         bundle = dependency("com.adobe.acs", "acs-aem-commons-bundle", ACS_AEM_COMMONS_VERSION_5)
     } else if (props.aemVersion == VERSION_62 || props.aemVersion == VERSION_63) {
         bundle = dependency("com.adobe.acs", "acs-aem-commons-bundle", ACS_AEM_COMMONS_VERSION_62)
-        bundle = dependency("org.twitter4j", "twitter4j-core", 4.0.0)
+        bundle = dependency("org.twitter4j", "twitter4j-core", TWITTER4J_VERSION_4)
     } else {
         bundle = dependency("com.adobe.acs", "acs-aem-commons-bundle", ACS_AEM_COMMONS_VERSION_6)
     }
