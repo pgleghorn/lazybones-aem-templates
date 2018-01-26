@@ -246,6 +246,11 @@ if (props.aemVersion == VERSION_60) {
     props.enableClassicAuthoringAsDefault = askBoolean("Do you want to set the default authoring UI to Classic UI? [yes]: ", "yes", "enableClassicAuthoringAsDefault")
 }
 
+props.includeVirtusaAccelerator = askBoolean("Install the Virtusa AEM Accelerator? [yes]: ", "yes", "includeVirtusaAccelerator")
+if (props.includeVirtusaAccelerator) {
+    println "Installing the Virtusa AEM Accelerator..."
+}
+
 // ACS AEM Commons
 props.includeAcsAemCommons = askBoolean("Include ACS AEM Commons as a dependency? [yes]: ", "yes", "includeAcsAemCommons")
 if (props.includeAcsAemCommons) {
